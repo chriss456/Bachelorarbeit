@@ -1,40 +1,34 @@
-/**
- * Created by christianott on 19.10.17.
- */
-
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Attribute;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class JSouptest {
 
+    public static final Map<Integer,String> doclist = new HashMap<Integer, String>();
+    public static final Map<Integer,String> visitedSite = new HashMap<Integer, String>();
+    public static final String startwebsite = "https://www.handelsblatt.com";
+
     public static void main(String[] args) {
         Document doc = null;
-        List<String> doclist = new ArrayList<String>();
-        Array[] array = new Array[100];
+        Crawler test = new Crawler();
+        doclist.put(0,startwebsite);
 
         try{
-            doc = Jsoup.connect("http://www.handelsblatt.com/unternehmen/industrie/kraftwerkssparte-siemens-zahl-zum-stellenabbau-ist-noch-nicht-fix/20695274.html").get();
-            String title = doc.title();
-            System.out.println("Title: " + title);
+            test.thewebsite(doc);
 
-            Elements links = doc.select("p");
-
-            for(Element link : links){
-                System.out.println("\nLink : " + link.attr("href"));
-                System.out.println("Text : " + link.text());
-                doclist.add(link.attr("href"));
-                //doc = Jsoup.connect(link.attr("href")).get();
-                //array[0] = ;
-            }
         }catch(IOException e){
             e.printStackTrace();
         }
     }
+
+
 }
