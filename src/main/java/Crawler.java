@@ -11,26 +11,27 @@ public class Crawler {
 
     public void catchlinks(Document doc){
         Elements links = doc.select("a[href]");
-        for(Element link : links){
-            if(link.attr("href").startsWith("/")){
-                this.link = JSouptest.startwebsite + link.attr("href");
-                if(!JSouptest.doclist.containsValue(this.link)){
-                    JSouptest.doclist.put(i++, this.link);
+
+            for (Element link : links) {
+                if(link.attr("href").contains("handelsblatt") && !link.attr("href").contains("digitalpass") && !link.attr("href").contains("mailto")) {
+                    if (link.attr("href").startsWith("/")) {
+                        this.link = JSouptest.startwebsite + link.attr("href");
+                        if (!JSouptest.doclist.containsValue(this.link)) {
+                            JSouptest.doclist.put(i++, this.link);
+                        }
+                    } else if (link.attr("href").startsWith("#") || link.attr("href").startsWith("m") || link.attr("href").contains("404")) {
+
+                    } else {
+                        this.link = link.attr("href");
+                        if (!JSouptest.doclist.containsValue(this.link)) {
+                            JSouptest.doclist.put(i++, this.link);
+                        }
+                    }
+                    //System.out.println(this.link);
+                    //System.out.println("Text : " + link.text());
                 }
             }
-            else if(link.attr("href").startsWith("#")){
 
-            }
-
-            else{
-                this.link = link.attr("href");
-                if(!JSouptest.doclist.containsValue(this.link)){
-                    JSouptest.doclist.put(i++, this.link);
-                }
-            }
-            //System.out.println(this.link);
-            //System.out.println("Text : " + link.text());
-        }
         System.out.println(JSouptest.doclist.size());
     }
 
