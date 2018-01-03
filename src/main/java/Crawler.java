@@ -39,11 +39,13 @@ public class Crawler {
     public void catchTexts(Document doc){
         HtmlFormatter formatter = new HtmlFormatter();
         Elements texts = doc.getElementsByClass("MsoNormal");
+        String title = doc.title();
         String finishedtext = "";
         //if(texts.toString().contains("Europa")) {
             for (Element text : texts) {
                 finishedtext += formatter.getPlainText(text);
             }
+        System.out.println("Title: "+title);
         System.out.println(JSouptest.textList);
         //}
         JSouptest.textList.add(finishedtext);
