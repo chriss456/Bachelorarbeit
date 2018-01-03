@@ -15,12 +15,14 @@ public class JSouptest {
 
     public static final Map<Integer,String> doclist = new HashMap<Integer, String>();
     public static final Map<Integer,String> visitedSite = new HashMap<Integer, String>();
-    public static final String startwebsite = "https://www.handelsblatt.com";
+    public static final String[] startwebsites = new String[]{"http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bain-studie-die-neue-lust-auf-luxus/20712004.html","",""};
+    public static final List<String> textList = new ArrayList<String>();
 
     public static void main(String[] args) {
         Document doc = null;
         Crawler test = new Crawler();
-        doclist.put(0,startwebsite);
+        Thread[] threads = new Thread[startwebsites.length];
+        doclist.put(0,startwebsites[0]);
 
         try{
             test.thewebsite(doc);
