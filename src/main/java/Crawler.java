@@ -3,6 +3,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.IOException;
+import java.util.Date;
 
 
 public class Crawler {
@@ -12,7 +13,7 @@ public class Crawler {
     public void catchlinks(Document doc){
         Elements links = doc.select("a[href]");
         catchTexts(doc);
-            for (Element link : links) {
+           /* for (Element link : links) {
                 if(link.attr("href").contains("handelsblatt") && !link.attr("href").contains("digitalpass") && !link.attr("href").contains("mailto")) {
                     if (link.attr("href").startsWith("/")) {
                         this.link = JSouptest.startwebsites[0] + link.attr("href");
@@ -31,9 +32,9 @@ public class Crawler {
                     //System.out.println("Text : " + link.text());
                 }
 
-            }
+            }*/
 
-        System.out.println(JSouptest.doclist.size());
+        //System.out.println(JSouptest.doclist.size());
     }
 
     public void catchTexts(Document doc){
@@ -41,14 +42,15 @@ public class Crawler {
         Elements texts = doc.getElementsByClass("MsoNormal");
         String title = doc.title();
         String finishedtext = "";
-        //if(texts.toString().contains("Europa")) {
             for (Element text : texts) {
                 finishedtext += formatter.getPlainText(text);
             }
-        System.out.println("Title: "+title);
-        System.out.println(JSouptest.textList);
-        //}
+        //System.out.println("Title: "+title);
+        //System.out.println(JSouptest.textList);
+        Date d = new Date();
         JSouptest.textList.add(finishedtext);
+        News news = new News(title,finishedtext,d,"handelsblatt.de");
+        JSouptest.newsList.add(news);
     }
 
     public void thewebsite(Document doc) throws IOException {

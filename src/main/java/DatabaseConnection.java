@@ -1,7 +1,11 @@
+import com.google.gson.Gson;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
-    public class DatabaseConnection {
+public class DatabaseConnection {
 
         Connection conn;
 
@@ -11,15 +15,13 @@ import java.sql.*;
         String dbUser;
         String dbPassword;
 
-        /*DatabaseConnection(){
-            config = new Config();
-
-            dbHost = config.getDbHost();
-            dbPort = config.getDbPort();
-            dbName = config.getDbName();
-            dbUser = config.getDbUser();
-            dbPassword = config.getDbPassword();
-        }*/
+        DatabaseConnection(String dbHost,String dbPort,String dbName,String dbUser,String dbPassword){
+            this.dbHost = dbHost;
+            this.dbPort = dbPort;
+            this.dbName = dbName;
+            this.dbUser = dbUser;
+            this.dbPassword = dbPassword;
+        }
 
         public void setupDBConnection() {
 
@@ -28,18 +30,29 @@ import java.sql.*;
                 Class.forName("org.postgresql.Driver");
             } catch (ClassNotFoundException e) {
                 //Main.logger.error(e);
+                System.out.println(e);
             }
 
             try {
                 conn = DriverManager.getConnection("jdbc:postgresql://"+dbHost+":"+dbPort+"/"+dbName, dbUser, dbPassword);
+                System.out.println("succeed");
             } catch (SQLException e) {
                 //Main.logger.error(e);
+                System.out.println(e);
             }
         }
 
-        public void insertNews () throws SQLException {
+        public void insertNews (News news) throws SQLException {
+
+            Gson gson = new Gson();
+            String jsonInString = gson.toJson(news);
+            Statement stmt = conn.createStatement();
+            stmt.execute("INSERT INTO \"News\"(data) VALUES('" + jsonInString + "')");
+
+
+
             // Transaktion beginnen
-            /*conn.setAutoCommit(false);
+            /*
 
             announcement.setId("0");
 
@@ -61,8 +74,7 @@ import java.sql.*;
             stmt3.executeUpdate("UPDATE announcements SET data='" + jsonInString + "' WHERE id=" + insertedId);
 
             // Transaktion beenden
-            conn.commit();
-            conn.setAutoCommit(true);*/
+            */
         }
     }
 
