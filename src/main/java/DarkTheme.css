@@ -1,0 +1,589 @@
+/*.label {
+    -fx-font-size: 36pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}*/
+
+.label-footer {
+    -fx-font-size: 17pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #01579B;
+    -fx-opacity: 1;
+}
+
+.label-header {
+	 -fx-text-fill   : #01579B;
+    -fx-font-weight : bold;
+    -fx-font-size: 44pt;
+    -fx-opacity: 1;
+}
+
+.label-bright {
+    -fx-font-size: 22pt;
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+    -fx-font-style: italic;
+}
+
+.label-subheader {
+    -fx-font-size: 28pt;
+    -fx-font-weight: 200;
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #E1F5FE;
+    -fx-background-color: #E1F5FE;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #E1F5FE;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: #01579B;
+        -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 22pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #01579B;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+    -fx-border-color: transparent #1d1d1d transparent #1d1d1d;
+    -fx-background-color: grey;
+}
+
+.split-pane {
+    -fx-padding: 1 0 0 0;
+    -fx-background-color: #29B6F6; /*#B3E5FC;*/
+}
+
+.bottom-pane {
+	-fx-background-color: grey;
+}
+
+.menu-bar {
+    -fx-background-color: derive(#1d1d1d,20%);
+}
+
+.context-menu {
+    -fx-background-color: derive(#1d1d1d,50%);
+}
+
+.menu-bar .label {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+}
+
+.menu .left-container {
+    -fx-background-color: black;
+}
+
+.text-field {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: black;
+}
+
+/* 
+ * Metro style Push Button
+ * Author: Pedro Duque Vieira
+ * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
+ */
+ /* 
+.button {
+ -fx-background-color: 
+        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(blue),
+        linear-gradient(blue);
+    -fx-background-insets: 0,1,4,5;
+    -fx-background-radius: 9,8,5,4;
+    -fx-padding: 15 30 15 30;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);
+}
+
+
+.button:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 0, 0;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+*/
+.background.hover {
+	-fx-background-color: #1d1d1d;
+}
+
+.background {
+-fx-background-color : #1d1d1d;
+}
+
+.button {
+    -fx-background-color : #29B6F6;
+    -fx-text-fill        : #E1F5FE;
+    -fx-font-weight      : 900;
+    }
+
+/*******************************************************************************
+ *                                                                             *
+ * DatePicker                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.date-picker {
+    -fx-background-color: #29B6F6;
+
+}
+
+.date-picker:hover {
+    -fx-background-color: #29B6F6;		/* date picker hover blue */
+}
+
+.date-picker:focused , .date-picker:focused:hover {
+    -fx-background-color: #29B6F6;
+}
+
+.date-picker > .arrow-button > .arrow {
+    -fx-shape: "M0,0v9h9V0H0z M2,8H1V7h1V8z M2,6H1V5h1V6z M2,4H1V3h1V4z M4,8H3V7h1V8z M4,6H3V5h1V6z M4,4H3V3h1V4z M6,8H5V7h1V8z M6,6H5 V5h1V6z M6,4H5V3h1V4z M8,8H7V7h1V8z M8,6H7V5h1V6z M8,4H7V3h1V4z";
+    -fx-background-color: white;
+    -fx-background-insets: 1 0 -1 0, 0;
+}
+
+.date-picker .text-field{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TextFieldSkin";
+}
+
+.date-picker .text-field{
+    -fx-background-radius: 0;
+    -fx-background-color: white;		/* white text field */
+    -fx-background-insets: 0;
+}
+
+
+.date-picker:hover .text-field {
+    -fx-background-color: white;		/* white text field */ 	
+}
+
+.date-picker:focused .text-field {
+    -fx-background-color: white;
+}
+
+.date-picker > .arrow-button
+{
+    -fx-background-color: #29B6F6;		/* button blue */
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.date-picker:hover > .arrow-button {
+    -fx-background-color: #29B6F6;		/* button hover green */
+}
+
+.date-picker:focused > .arrow-button{
+    -fx-background-color: #29B6F6;		/* button focused green */	
+}
+
+.date-picker > .arrow-button:hover {
+    -fx-background-color: #29B6F6;		/* button hover green */
+    -fx-background-insets: 3;
+    -fx-background-radius: 0;
+}
+
+.date-picker > .arrow-button:pressed {
+    -fx-background-color: #29B6F6;		/* button pressed green */
+    -fx-background-insets: 3;
+    -fx-background-radius: 0;
+}
+
+.date-picker > .arrow-button:pressed > .arrow {
+    -fx-background-color: white;		
+}
+
+.date-picker-popup {
+    -fx-background-color: #4a4a4a;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: #4a4a4a;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-padding: 0.25em 0.583333em 0.25em 0.583333em; /* 3 7 3 7 */
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-background-color: #4a4a4a;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+}
+
+.date-picker-popup > * > .spinner > .button > .left-arrow,
+.date-picker-popup > * > .spinner > .button > .right-arrow {
+    -fx-background-color: white;			
+    -fx-background-insets: 0;
+    -fx-effect: null;
+}
+
+.date-picker-popup > * > .spinner > .button:hover > .left-arrow,
+.date-picker-popup > * > .spinner > .button:hover > .right-arrow {
+    -fx-background-color: #29B6F6;				/* green */
+}
+
+.date-picker-popup > * > .spinner {
+    -fx-background-color: #4a4a4a;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner .label {
+    -fx-text-fill: white;
+}
+
+.date-picker-popup > .calendar-grid {
+    -fx-background-color: #4a4a4a;
+    -fx-padding: 0;
+}
+
+.date-picker-popup > * > .day-name-cell,
+.date-picker-popup > * > .week-number-cell {
+    -fx-font-size: 0.75em;
+    -fx-text-fill: white;
+}
+
+.date-picker-popup > * > .day-cell {
+
+    -fx-border-color: #4a4a4a;
+    -fx-background: #4a4a4a;
+    -fx-background-color: #4a4a4a;
+    -fx-text-fill: white;
+}
+
+.date-picker-popup > * > .day-cell:hover {
+    -fx-background-color: #29B6F6, #4a4a4a;		/* green */
+    -fx-background-insets: 0, 3;
+}
+
+.date-picker-popup > * > .day-cell.selected {
+    -fx-background-color: #29B6F6, #4a4a4a;		/* green */
+    -fx-background-insets: 0, 3;
+}
+
+.date-picker-popup > * > .previous-month,
+.date-picker-popup > * > .next-month {
+    -fx-background-color: #4a4a4a;
+    /*-fx-text-fill: #999999;*/
+    -fx-opacity: 0.3;
+}
+
+.date-picker-popup > * > .today {
+    -fx-background-color: #01579B;				/* today = red */
+    -fx-background-insets: 0;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * List Box                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.list-view {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-padding: 1;
+}
+
+.list-view:focused {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-padding: 1em 2em 1em 2em;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-background-color: white;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:focused {
+    -fx-background-color: #29B6F6;
+}
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-background-color: white;
+}
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:focused {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:focused:selected {
+    -fx-background-color: #29B6F6;
+    -fx-background-insets: 0;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell{
+    -fx-text-fill: black;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:focused{
+    -fx-text-fill: black;
+}
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:focused{
+    -fx-text-fill: black;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ComboBox                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.combo-box-base  {
+    -fx-background-color: transparent, transparent, transparent, #d2d2d2;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-padding: 0em 0.166667em 0em 0.166667em; /* 0 2px 0 2px*/
+
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1.333333em; /* 16 */
+}
+
+.combo-box-base:hover {
+    -fx-background-color: transparent, white, transparent, #d2d2d2;
+
+}
+
+.combo-box-base:focused {
+    -fx-background-color: transparent, white, transparent, #d2d2d2;
+    -fx-background-insets: -1.4, 0, 1, 2;
+
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.combo-box-base:focused:hover {
+    -fx-background-color: transparent, white, transparent, #d2d2d2;
+}
+
+
+.combo-box-base:disabled {
+    -fx-opacity: .4;
+}
+
+/* ------- OPEN BUTTON ------- */
+.combo-box-base .arrow-button {
+    -fx-background-color: transparent, transparent, transparent;
+}
+
+/* ------- ARROW* ------- */
+.combo-box-base .arrow {
+    -fx-padding: 0.236110875em 0.333333em 0.236110875em 0.333333em; /* (2/3 * 4.25) 4 (2/3 * 4.25) 4 */
+    -fx-shape: "M-78,640l-6-5.5v-3l6,5l0,0l6-5v3L-78,640L-78,640z";
+    -fx-background-insets: 0 0 0 0, 0;
+    -fx-background-color: black;
+}
+
+/* LIST */
+.combo-box-popup > .list-view {
+    -fx-effect: null;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-font-size: 11pt;
+    -fx-padding: 4 0 4 5;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected{
+    -fx-background-color: #55c4fe;  /* TODO: this probably is the "accent" color" */
+}
+
+/* - ScrollBar */
+
+.combo-box-popup  > .list-view > .virtual-flow  > .scroll-bar > .thumb{
+    -fx-background-color: #cdcdcd;
+}
+
+.combo-box-popup > .list-view .list-cell:filled:selected{
+    -fx-background-color: #55c4fe;  /* TODO: this probably is the "accent" color" */
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .thumb:hover {
+    -fx-background-color: #dadada;
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .thumb:pressed {
+    -fx-background-color: #606060;
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .track {
+    -fx-background-color: #f0f0f0;
+}
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .track-background {
+    -fx-background-color: #f0f0f0;
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .increment-button,
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-background-color: #f0f0f0;
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .increment-button:hover,
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .decrement-button:hover  {
+    -fx-background-color: #dadada;
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .increment-button:pressed,
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .decrement-button:pressed {
+    -fx-background-color: #606060;
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .decrement-button > .decrement-arrow,
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .increment-button > .increment-arrow{
+    -fx-background-color: transparent, #606060;
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .decrement-button:pressed > .decrement-arrow,
+.combo-box-popup  > .list-view > .virtual-flow > .scroll-bar > .increment-button:pressed > .increment-arrow {
+    -fx-background-color: transparent, white;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ChoiceBox                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.choice-box  {
+    -fx-background-color: transparent, transparent, transparent, white;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-border-color: white;
+    -fx-font-size: 1.333333em; /* 16 */
+}
+
+.choice-box:hover {
+    -fx-background-color: transparent, transparent, transparent, white;
+
+}
+
+.choice-box:focused {
+    -fx-background-color: transparent, transparent, transparent, white;
+
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.choice-box:focused:hover {
+    -fx-background-color: transparent,transparent, transparent, white;
+}
+
+
+.choice-box:disabled {
+    -fx-opacity: .4;
+}
+
+.radio-menu-item:checked > .left-container > .radio {
+    -fx-shape: "M9.005,17.766l13.759,14.739h1.716L49.02,0l10.298,8.488L25.997,50.453h-3.629L0,26.897L9.005,17.766z";
+    -fx-padding:7px;
+    -fx-scale-shape: true;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Push Button                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+/*
+.button {
+    -fx-padding: 5 22 5 22;
+
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+
+    -fx-background-radius: 0;
+
+    -fx-background-color: #1d1d1d;
+
+     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: #d8d8d8;
+}
+
+.button:hover{
+    -fx-background-color: #3a3a3a;
+}
+/*
+.button:pressed, .button:default:hover
+{
+  -fx-background-color: white;
+  -fx-text-fill: #1d1d1d;
+}
+/*
+.button:focused
+{
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 2;
+    -fx-border-style: solid, segments(1, 2);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled
+{
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button:default
+{
+    -fx-background-color: #008287;
+    -fx-text-fill: #ffffff;
+}
+
+.button:default:hover{
+    -fx-background-color: #219297;
+}
+*/
+
