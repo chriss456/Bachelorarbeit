@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,15 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Attribute;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
-import static javafx.application.Application.STYLESHEET_CASPIAN;
-import static javafx.application.Application.launch;
-import static javafx.application.Application.setUserAgentStylesheet;
+import org.jsoup.nodes.Document;
+
 
 public class JSouptest extends Application {
 
@@ -29,11 +22,10 @@ public class JSouptest extends Application {
     public static final List<News> newsList = new ArrayList<News>();
     static Stage stage;
 
-    public void start(Stage primaryStage) {
-
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("Mainpage.fxml"));
-            Scene scene = new Scene(root, 1200,700);
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+            Parent root = FXMLLoader.load(getClass().getResource("/Mainpage.fxml"));
+            Scene scene = new Scene(root, 600,400);
             //scene.getStylesheets().add(getClass().getResource("DarkTheme.css").toExternalForm());
             //System.setProperty( "javafx.userAgentStylesheetUrl", "CASPIAN" );
             //setUserAgentStylesheet(STYLESHEET_CASPIAN);
@@ -41,20 +33,15 @@ public class JSouptest extends Application {
             stage.setScene(scene);
             stage.setTitle("Start");
             stage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
     }
 
-    public static void main(String[] args) throws java.sql.SQLException{
+    public static void main(String[] args)throws java.sql.SQLException {
         launch(args);
 
-        //DatabaseConnection con = new DatabaseConnection("localhost","5432","WebCrawler","postgres","147258369");
-        //con.setupDBConnection();
-        /*Document doc = null;
+        DatabaseConnection con = new DatabaseConnection("localhost","5432","WebCrawler","postgres","147258369");
+        con.setupDBConnection();
+        Document doc = null;
         Crawler test = new Crawler();
-        Thread[] threads = new Thread[startwebsites.length];
         doclist.put(0,startwebsites[0]);
 
         try{
@@ -68,11 +55,11 @@ public class JSouptest extends Application {
         /*String[] newtext = JSouptest.newsList.get(0).nachricht.split(".");
                 //.replace(","," ");
         System.out.println(JSouptest.newsList.get(0).nachricht);*/
-        //Classify classy = new Classify();
-        //classy.getKnowledge();
-        //classy.classyfyText("");
-        //String[] text = "Der Mann ist ja super nett und böse oder schlimm".split("\\s");
-        //classy.getProbalitiy(text);
+        Classify classy = new Classify();
+        classy.getKnowledge();
+        classy.classyfyText("");
+        String[] text = "Der Mann ist ja super nett und böse oder schlimm".split("\\s");
+        classy.getProbalitiy(text);
     }
 
 

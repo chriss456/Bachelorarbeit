@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JSouptest">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainWindowController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -16,7 +16,7 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <TextField layoutX="107.0" layoutY="173.0" prefHeight="27.0" prefWidth="194.0" promptText="Name" />
+            <TextField fx:id="searchName" layoutX="107.0" layoutY="173.0" prefHeight="27.0" prefWidth="194.0" promptText="Name" />
             <DatePicker layoutX="106.0" layoutY="231.0" promptText="Date" />
             <Button layoutX="376.0" layoutY="231.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="113.0" text="Search" />
          </children>
