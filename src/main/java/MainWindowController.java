@@ -1,3 +1,5 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,13 +21,20 @@ public class MainWindowController{
 @FXML Button searchButton;
 @FXML TextField searchName;
 @FXML DatePicker datePicker;
-Stage primaryStage = new Stage();
+static ObservableList<News> items = FXCollections.observableArrayList();
+
 
 
     public void search() throws Exception{
-        JSouptest.stage.close();
+
+        String search = searchName.getText();
+
+        items = DatabaseConnection.getNews();
+
+        Stage primaryStage = new Stage();
         OutcomeWindow outcomeWindow = new OutcomeWindow();
         outcomeWindow.start(primaryStage);
+        JSouptest.stage.close();
     }
 
 }

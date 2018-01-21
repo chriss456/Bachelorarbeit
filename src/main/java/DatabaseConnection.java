@@ -1,4 +1,6 @@
 import com.google.gson.Gson;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import java.util.List;
 
 public class DatabaseConnection {
 
-        Connection conn;
+        static Connection conn;
 
         String dbHost;
         String dbPort;
@@ -42,39 +44,26 @@ public class DatabaseConnection {
             }
         }
 
-        public void insertNews (News news) throws SQLException {
+        static public void insertNews (News news) throws SQLException {
 
             Gson gson = new Gson();
             String jsonInString = gson.toJson(news);
             Statement stmt = conn.createStatement();
             stmt.execute("INSERT INTO \"News\"(data) VALUES('" + jsonInString + "')");
+        }
 
+        static public ObservableList<News> getNews() throws SQLException{
 
-
-            // Transaktion beginnen
-            /*
-
-            announcement.setId("0");
-
-            Gson gson = new Gson();
-            String jsonInString = gson.toJson(announcement);
-            Statement stmt = conn.createStatement();
-            stmt.execute("INSERT INTO announcements(data, pushed) VALUES('" + jsonInString + "', false)");
-
-            // Auto increment wert abrufen
-            Statement stmt2 = conn.createStatement();
-            ResultSet rs2 = stmt2.executeQuery("SELECT last_value FROM announcements_id_seq");
-            rs2.next();
-            String insertedId = rs2.getString(1);
-
-            // id in Objekt anpassen
-            announcement.setId(insertedId);
-            jsonInString = gson.toJson(announcement);
-            Statement stmt3 = conn.createStatement();
-            stmt3.executeUpdate("UPDATE announcements SET data='" + jsonInString + "' WHERE id=" + insertedId);
-
-            // Transaktion beenden
-            */
+            ObservableList<News> newsList = FXCollections.observableArrayList();
+            PreparedStatement stmt = conn.prepareStatement("Select DATA from \"News\"");
+            ResultSet set = stmt.executeQuery();
+            while(set.next()){
+                Gson gson = new Gson();
+                String string = set.getString(1);
+                News news  = gson.fromJson(string, News.class);
+                newsList.add(news);
+            }
+            return newsList;
         }
     }
 

@@ -17,8 +17,8 @@
                </font>
             </Label>
             <TextField fx:id="searchName" layoutX="107.0" layoutY="173.0" prefHeight="27.0" prefWidth="194.0" promptText="Name" />
-            <DatePicker layoutX="106.0" layoutY="231.0" promptText="Date" />
-            <Button layoutX="376.0" layoutY="231.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="113.0" text="Search" />
+            <DatePicker fx:id="datePicker" layoutX="106.0" layoutY="231.0" promptText="Date" />
+            <Button fx:id="searchButton" layoutX="376.0" layoutY="231.0" mnemonicParsing="false" onAction="#search" prefHeight="27.0" prefWidth="113.0" text="Search" />
          </children>
       </Pane>
    </children>

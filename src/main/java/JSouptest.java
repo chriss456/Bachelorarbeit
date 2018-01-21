@@ -16,8 +16,9 @@ import org.jsoup.nodes.Document;
 public class JSouptest extends Application {
 
     public static final Map<Integer,String> doclist = new HashMap<Integer, String>();
+    public static final Map<Integer,String> doclistArticle = new HashMap<Integer, String>();
     public static final Map<Integer,String> visitedSite = new HashMap<Integer, String>();
-    public static final String[] startwebsites = new String[]{"http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bain-studie-die-neue-lust-auf-luxus/20712004.html","",""};
+    public static final String[] startwebsites = new String[]{"http://www.handelsblatt.com/finanzen/maerkte/devisen-rohstoffe/opec-und-ihre-partner-vereint-in-oelbruderschaft/20871292.html","",""};
     public static final List<String> textList = new ArrayList<String>();
     public static final List<News> newsList = new ArrayList<News>();
     static Stage stage;
@@ -35,11 +36,13 @@ public class JSouptest extends Application {
             stage.show();
     }
 
-    public static void main(String[] args)throws java.sql.SQLException {
-        launch(args);
+    public static void main(String[] args)throws Exception {
+
 
         DatabaseConnection con = new DatabaseConnection("localhost","5432","WebCrawler","postgres","147258369");
         con.setupDBConnection();
+        //launch(args);
+
         Document doc = null;
         Crawler test = new Crawler();
         doclist.put(0,startwebsites[0]);
@@ -55,11 +58,11 @@ public class JSouptest extends Application {
         /*String[] newtext = JSouptest.newsList.get(0).nachricht.split(".");
                 //.replace(","," ");
         System.out.println(JSouptest.newsList.get(0).nachricht);*/
-        Classify classy = new Classify();
+        /*Classify classy = new Classify();
         classy.getKnowledge();
         classy.classyfyText("");
         String[] text = "Der Mann ist ja super nett und böse oder schlimm".split("\\s");
-        classy.getProbalitiy(text);
+        classy.getProbalitiy(text);*/
     }
 
 
