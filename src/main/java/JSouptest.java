@@ -53,7 +53,7 @@ public class JSouptest extends Application {
         }catch(IOException e){
             e.printStackTrace();
         }
-        //con.insertNews(JSouptest.newsList.get(0));
+        con.insertNews(JSouptest.newsList.get(0));
 
         /*String[] newtext = JSouptest.newsList.get(0).nachricht.split(".");
                 //.replace(","," ");
